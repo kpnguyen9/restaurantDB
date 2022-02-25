@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Restaurants.belongsTo(models.review, {
+      Restaurants.belongsTo(models.Review, {
         foreignKey: "restaurantID",
         onDelete: "CASCADE",
       });
@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       address: DataTypes.STRING,
       category: DataTypes.STRING,
-      restaurantID: DataTypes.INTEGER,
     },
     {
       sequelize,
